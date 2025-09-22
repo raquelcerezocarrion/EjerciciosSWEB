@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name=""description" content="Ejercicio HTML de SWEB">
+    <meta name="author" content="Raquel">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio HTML</title>
+    <link rel="icon" type="image/png" href="images/HTML5-icon.png">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#elementos-basicos">Elementos básicos</a> |
+            <a href="#buenas-practicas">Buenas prácticas</a> |
+            <a href="#elemento-imagen">Elemento Imagen</a> |
+            <a href="#enlaces">Enlaces</a> |
+            <a href="#formularios">Formularios</a> |
+            <a href="#tablas">Tablas</a>
+            <a href="#recursos-adicionales">Recursos adicionales</a>
+        </nav>
+<h1>Apuntes básicos de HTML</h1>
+<h3 id="elementos-basicos">Elementos básicos de HTML</h3>
+<ul>
+    <li><strong>&lt;h1&gt; a &lt;h6&gt;</strong>: Encabezados de diferentes niveles, siendo &lt;h1&gt; el más importante.</li>
+    <li><strong>&lt;p&gt;</strong>: Define un párrafo de texto.</li>
+    <li><strong>&lt;a&gt;</strong>: Crea un hipervínculo a otra página o recurso.</li>
+    <li><strong>&lt;img&gt;</strong>: Inserta una imagen en la página web.</li>
+    <li><strong>&lt;ul&gt; y &lt;ol&gt;</strong>: Listas no ordenadas (con viñetas) y ordenadas (numeradas).</li>
+    <li><strong>&lt;li&gt;</strong>: Define un ítem dentro de una lista.</li>
+    <li><strong>&lt;div&gt;</strong>: Contenedor genérico para agrupar elementos y aplicar estilos o scripts.</li>
+    <li><strong>&lt;span&gt;</strong>: Contenedor en línea para aplicar estilos a una parte del texto.</li>
+    <li><strong>&lt;form&gt;</strong>: Define un formulario para la entrada de datos del usuario.</li>
+    <li><strong>&lt;input&gt;</strong>: Campo de entrada dentro de un formulario (texto, botón, casilla de verificación, etc.).</li>
+    <li><strong>&lt;button&gt;</strong>: Botón interactivo que puede activar acciones.</li>
+    <li><strong>&lt;table&gt;</strong>: Crea una tabla para organizar datos en filas y columnas.</li>
+    <li><strong>&lt;tr&gt;</strong>: Define una fila dentro de una tabla.</li>
+    <li><strong>&lt;td&gt;</strong>: Define una celda dentro de una fila de tabla.</li>
+    <li><strong>&lt;th&gt;</strong>: Define una celda de encabezado dentro de una tabla.</li>
+    <li><strong>&lt;meta&gt;</strong>: Proporciona metadatos sobre el documento, como la codificación de caracteres y la descripción.</li>
+    <li><strong>&lt;link&gt;</strong>: Vincula recursos externos, como hojas de estilo CSS.</li>
+    <li><strong>&lt;script&gt;</strong>: Inserta o referencia código JavaScript para añadir interactividad.</li>
+    <li><strong>&lt;style&gt;</strong>: Define estilos CSS directamente dentro del documento HTML.</li>
+</ul>
+<h3 id="buenas-practicas">Buenas prácticas en HTML</h3>
+<p>
+    Para escribir un código HTML limpio y eficiente, es importante seguir ciertas buenas prácticas. Primero, siempre utiliza una estructura semántica adecuada, empleando las etiquetas correctas para cada tipo de contenido (por ejemplo, &lt;article&gt; para artículos, &lt;nav&gt; para navegación). Segundo, mantén el código bien organizado e indentado para mejorar la legibilidad. Tercero, utiliza atributos descriptivos como "alt" en imágenes para mejorar la accesibilidad. Cuarto, evita el uso excesivo de etiquetas &lt;div&gt; y &lt;span&gt;, optando por etiquetas más específicas cuando sea posible. Quinto, asegúrate de que tu HTML sea compatible con diferentes navegadores y dispositivos mediante pruebas regulares. Sexto, minimiza el uso de estilos en línea y scripts dentro del HTML, prefiriendo archivos externos para CSS y JavaScript. Séptimo, valida tu código utilizando herramientas como el validador de W3C para detectar errores y asegurar el cumplimiento de los estándares web. Finalmente, mantente actualizado con las últimas especificaciones de HTML y las mejores prácticas recomendadas por la comunidad web.
+</p>
+<h4 id="estructura-basica">Estructura básica de un documento HTML</h4>
+<pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Título de la página&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Contenido de la página --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<h4>Ejemplo de estructura semántica</h4>
+<pre>&lt;header&gt;
+    &lt;nav&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Acerca de&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Contacto&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;
+&lt;main&gt;
+    &lt;article&gt;
+        &lt;h1&gt;Título del artículo&lt;/h1&gt;
+        &lt;p&gt;Contenido del artículo...&lt;/p&gt;
+    &lt;/article&gt;
+&lt;aside&gt;
+    &lt;h2&gt;Información adicional&lt;/h2&gt;
+    &lt;p&gt;Contenido del aside...&lt;/p&gt;
+&lt;/aside&gt;
+&lt;/main&gt;
+&lt;footer&gt;
+    &lt;p&gt;Pie de página...&lt;/p&gt;
+&lt;/footer&gt;
+</pre>
+<h4>Ejemplo de uso de comentarios</h4>
+<pre>&lt;!-- Este es un comentario en HTML --&gt;
+&lt;!-- Los comentarios no son visibles en el navegador --&gt;
+</pre>
+<h4>Ejemplo de uso de atributos globales</h4>
+<pre>&lt;div id="miDiv" class="miClase" style="color: red;" title="Este es un div"&gt;
+    Contenido del div
+&lt;/div&gt;
+</pre>
+<h4>Ejemplo de uso de etiquetas de texto</h4>
+<pre>&lt;strong&gt;Texto en negrita&lt;/strong&gt;
+&lt;em&gt;Texto en cursiva&lt;/em&gt;
+&lt;mark&gt;Texto resaltado&lt;/mark&gt;
+&lt;small&gt;Texto pequeño&lt;/small&gt;
+&lt;del&gt;Texto tachado&lt;/del&gt;
+&lt;ins&gt;Texto subrayado&lt;/ins&gt;
+&lt;sub&gt;Texto subíndice&lt;/sub&gt;
+&lt;sup&gt;Texto superíndice&lt;/sup&gt;
+</pre>
+<h4>Ejemplo de uso de listas</h4>
+<pre>&lt;ul&gt;
+    &lt;li&gt;Elemento de lista no ordenada 1&lt;/li&gt;
+    &lt;li&gt;Elemento de lista no ordenada 2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+    &lt;li&gt;Elemento de lista ordenada 1&lt;/li&gt;
+    &lt;li&gt;Elemento de lista ordenada 2&lt;/li&gt;
+&lt;/ol&gt;
+</pre>
+<h3 id="elemento-imagen">El elemento Imagen</h3>
+<p>
+    El elemento &lt;img&gt; en HTML se utiliza para insertar imágenes en una página web. Es una etiqueta auto-cerrada que requiere al menos el atributo "src" para especificar la ruta de la imagen y el atributo "alt" para proporcionar un texto alternativo que describe la imagen, lo cual es crucial para la accesibilidad y el SEO. Además, se pueden usar otros atributos como "width" y "height" para definir las dimensiones de la imagen, aunque es recomendable controlar el tamaño mediante CSS para mayor flexibilidad. También es posible utilizar atributos como "title" para mostrar un tooltip al pasar el cursor sobre la imagen. El elemento &lt;img&gt; no tiene una etiqueta de cierre, y su sintaxis básica es: &lt;img src="ruta/de/la/imagen.jpg" alt="Descripción de la imagen"&gt;. Es importante optimizar las imágenes para la web, asegurándose de que tengan un tamaño adecuado y un formato apropiado (como JPEG, PNG o WebP) para mejorar los tiempos de carga y la experiencia del usuario.
+</p>
+<h4>Ejemplo de imagen</h4>
+<img src="images/HTML5-icon.png" alt="Icono de HTML5" width="100">
+<h4>Ejemplo de imagen con título y dimensiones</h4>
+<img src="images/CSS3-icon.png" alt="Icono de CSS3" title
+    ="Icono de CSS3" width="100" height="100">
+<h4>Ejemplo de imagen con estilo CSS</h4>
+<img src="images/JS-icon.png" alt="Icono de JavaScript" style="border: 2px solid black; border-radius: 10px;" width="100">
+<h4>Ejemplo de imagen con enlace</h4>
+<a href="https://developer.mozilla.org/es/docs/Web/HTML/Element/img" target="_
+blank">
+    <img src="images/HTML5-icon.png" alt="Icono de HTML5" width="100">
+</a>
+<h4>Tabla de imágenes</h4>
+<table border="1">
+    <tr>
+        <th>Imagen</th>
+        <th>Descripción</th>
+    </tr>
+    <tr>
+        <td><img src="images/HTML5-icon.png" alt="Icono de HTML5" width="100"></td>
+        <td>Icono representativo del lenguaje HTML5, que simboliza la evolución y modernización del desarrollo web.</td>
+    </tr>
+
+    <tr>
+        <td><img src="images/CSS3-icon.png" alt="Icono de CSS3" width="100"></td>
+        <td>Icono representativo del lenguaje CSS3, que se utiliza para diseñar y dar estilo a las páginas web.</td>
+    </tr>
+    <tr>
+        <td><img src="images/JS-icon.png" alt="Icono de JavaScript" width="100"></td>
+        <td>Icono representativo del lenguaje JavaScript, que añade interactividad y dinamismo a las páginas web.</td>
+    </tr>
+</table>
+<h3 id="enlaces">Enlaces</h3>
+<p>
+    Los enlaces en HTML se crean utilizando la etiqueta &lt;a&gt; (ancla). Esta etiqueta permite vincular a otras páginas web, archivos, direcciones de correo electrónico o incluso a secciones específicas dentro de la misma página. El atributo principal de la etiqueta &lt;a&gt; es "href", que especifica la URL del destino del enlace. Por ejemplo, &lt;a href="https://www.ejemplo.com"&gt;Visitar Ejemplo&lt;/a&gt; crea un enlace que lleva al usuario a "https://www.ejemplo.com". Además, se pueden utilizar otros atributos como "target" para definir cómo se abrirá el enlace (por ejemplo, en una nueva pestaña con target="_blank") y "title" para proporcionar información adicional que aparece al pasar el cursor sobre el enlace. Es importante asegurarse de que los enlaces sean descriptivos y accesibles, utilizando texto claro y relevante para mejorar la experiencia del usuario y la optimización en motores de búsqueda (SEO).
+</p>
+<h4>Ejemplo de enlace</h4>
+<a href="https://www.ejemplo.com" target="_blank" title="Visitar
+    Ejemplo">Visitar Ejemplo</a>
+<h4>Ejemplo de enlace a una sección interna</h4>
+<a href="#elementos-basicos" title="Ir a Elementos básicos">Ir a Element
+os básicos</a>
+<h3 id="formularios">Formularios</h3>
+<p>
+    Los formularios en HTML se crean utilizando la etiqueta &lt;form&gt;, que actúa como un contenedor para diversos elementos de entrada que permiten a los usuarios enviar datos a un servidor. Dentro de un formulario, se pueden incluir diferentes tipos de campos de entrada, como &lt;input&gt; (para texto, contraseñas, botones, casillas de verificación, etc.), &lt;textarea&gt; (para áreas de texto más grandes), &lt;select&gt; (para menús desplegables) y &lt;button&gt; (para botones interactivos). El atributo "action" de la etiqueta &lt;form&gt; especifica la URL a la que se enviarán los datos del formulario, mientras que el atributo "method" define el método HTTP utilizado para el envío (generalmente "GET" o "POST"). Es importante incluir etiquetas &lt;label&gt; para cada campo de entrada para mejorar la accesibilidad y la usabilidad del formulario. Además, se pueden implementar validaciones tanto en el lado del cliente (usando atributos HTML5 o JavaScript) como en el lado del servidor para asegurar que los datos ingresados sean correctos y seguros antes de procesarlos.
+</p>
+<h4 id="formulario">Ejemplo de formulario</h4>
+<form action="/submit" method="post">
+    <label for="name">Nombre:</label>
+    <input type="text" id="name" name="name" required><br><br>
+    <label for="email">Correo electrónico:</label>
+    <input type="email" id="email" name="email" required><br><br>
+    <label for="message">Mensaje:</label><br>
+    <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+    <button type="submit">Enviar</button>
+</form>
+<h5>Ejemplo de uso de input</h5>
+<input type="text" placeholder="Ingrese su nombre">
+<input type="password" placeholder="Ingrese su contraseña">
+<input type="checkbox" id="subscribe" name="subscribe">
+<label for="subscribe">Suscribirse al boletín</label>
+<input type="radio" id="option1" name="options" value="1">
+<label for="option1">Opción 1</label>
+<input type="radio" id="option2" name="options" value="2">
+<label for="option2">Opción 2</label>
+<button type="button" onclick="alert('Botón clickeado!')">Clic aquí</button>
+<h5>Ejemplo de uso de select</h5>
+<label for="cars">Elige un coche:</label>
+<select id="cars" name="cars">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="mercedes">Mercedes</option>
+    <option value="audi">Audi</option>
+</select>
+<h5>Ejemplo de uso de Datalist</h5>
+<label for="browser">Elige tu navegador favorito:</label>
+<input list="browsers" id="browser" name="browser">
+<datalist id="browsers">
+    <option value="Chrome">
+    <option value="Firefox">
+    <option value="Safari">
+    <option value="Edge">
+    <option value="Opera">
+</datalist>
+<h5>Diferencia entre select y datalist</h5>
+<h3 id="tablas">Tablas</h3>
+<p>
+    Las tablas en HTML se crean utilizando la etiqueta &lt;table&gt;, que sirve como contenedor para organizar datos en filas y columnas. Dentro de una tabla, las filas se definen con la etiqueta &lt;tr&gt; (table row), mientras que las celdas de datos se crean con la etiqueta &lt;td&gt; (table data) y las celdas de encabezado con la etiqueta &lt;th&gt; (table header). Es común utilizar &lt;th&gt; en la primera fila o columna para proporcionar títulos descriptivos que ayuden a identificar el contenido de las celdas correspondientes. Además, se pueden aplicar atributos como "border", "cellpadding" y "cellspacing" para controlar el estilo y el espaciado de la tabla, aunque es recomendable usar CSS para un mayor control visual. Las tablas son útiles para presentar datos tabulares de manera clara y estructurada, pero deben usarse con moderación para evitar complicaciones en el diseño responsivo y la accesibilidad. Es importante también considerar el uso de elementos semánticos adicionales, como &lt;caption&gt; para añadir un título a la tabla y &lt;thead&gt;, &lt;tbody&gt; y &lt;tfoot&gt; para organizar mejor el contenido de la tabla.
+</p>
+<h2 id="recursos-adicionales">Recursos adicionales</h2>
+<a href="https://www.w3schools.com/html/" target="_blank">Más información sobre HTML</a>
+<a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank">Documentación de HTML en MDN</a>
+<a href="https://html.spec.whatwg.org/multipage/" target="_blank">Especificaciones de HTML</a>
+<a href="https://validator.w3.org/" target="_blank">Validador de HTML del W3C</a>
+<footer>
+    <p>&copy; 2024 Raquel. Todos los derechos reservados.</p>
+</footer> 
+</body>
+</html>
