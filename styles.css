@@ -1,0 +1,181 @@
+
+* { box-sizing: border-box; }
+
+/* 1) Base muy visible */
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  color: #111;
+  background-color: #FFF1E6;    /* fondo melocotón claro */
+  border: 10px solid #1F2937;   /* borde grueso alrededor de toda la página */
+}
+
+/* 2) Cabecera y título */
+header {
+  background-color: #10B981;    /* verde llamativo */
+  color: #ffffff;
+  text-align: center;
+  padding: 24px 16px;
+}
+header h1 {
+  margin: 0 0 10px 0;
+  font-size: 40px;              /* grande para que se note */
+}
+
+/* 3) Barra de navegación visible */
+header nav {
+  background-color: #111827;    /* casi negro */
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+header nav a {
+  display: inline-block;
+  padding: 14px 18px;
+  color: #F9FAFB;
+  text-decoration: none;
+  text-transform: uppercase;     /* que se note */
+  letter-spacing: 0.5px;
+}
+header nav a:hover {             /* pseudoclase :hover */
+  background-color: #F59E0B;     /* ámbar */
+  color: #000;
+}
+
+/* 4) Secciones y títulos secundarios con fondo para contraste */
+h2, h3, h4, h5 {
+  background-color: #E0F2FE;     /* azul claro */
+  padding: 8px 10px;
+  border-left: 6px solid #0EA5E9; /* barra lateral */
+  margin: 16px auto;
+  max-width: 1000px;
+}
+/* margen y ancho para bloques de contenido comun */
+body > p,
+body > ul,
+body > ol,
+body > pre,
+body > table,
+body > form,
+body > footer,
+body > a,
+.fila {
+  max-width: 1000px;
+  margin: 16px auto;
+  padding: 0 16px;
+}
+
+/* 5) Enlaces */
+a { color: #1D4ED8; }
+a[target="_blank"] { background-color: yellow; } /* selector de atributo (valor exacto) */
+a[target="_blank"]::after { content: " ↗"; }     /* pseudoelemento ::after */
+
+/* 6) Imágenes */
+img { max-width: 100%; height: auto; display: block; }
+img[alt*="JavaScript"] { border: 3px solid #111; border-radius: 10px; } /* atributo contiene */
+
+/* 7) Bloques de código (pre) */
+pre {
+  background-color: #111827;     /* gris muy oscuro */
+  color: #F3F4F6;                /* texto claro */
+  padding: 14px;
+  border-radius: 6px;
+  white-space: pre-wrap;
+  overflow: auto;
+}
+
+/* 8) Tablas bien marcadas */
+table { width: 100%; border-collapse: collapse; background-color: #ffffff; }
+th, td { border: 2px solid #111827; padding: 10px; text-align: left; }
+thead th { background-color: #FDE68A; }   /* cabecera amarilla intensa */
+
+/* 9) Formularios */
+label { display: inline-block; margin: 8px 0 4px; }
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+  width: 100%;
+  max-width: 600px;
+  padding: 10px 12px;
+  border: 2px solid #6B7280;     /* borde más grueso */
+  border-radius: 6px;
+  background-color: #ffffff;
+}
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #1D4ED8;
+  outline: none;
+}
+button {
+  background-color: #1D4ED8;
+  color: #fff;
+  border: 2px solid #1D4ED8;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+button:hover { background-color: #153EAB; }
+
+/* 10) Ejemplos visuales de float/columnas */
+.fila::after { content: ""; display: block; clear: both; }
+.column { float: left; width: 50%; padding: 10px; }
+img.float-left { float: left; margin: 0 12px 8px 0; }
+
+/* 11) Pseudoelemento decorativo para h1 */
+h1::first-letter { font-size: 150%; }
+
+/* 12) Aviso en la esquina*/
+body::after {
+  content: "CSS ACTIVADO";
+  position: fixed;
+  right: 8px;
+  bottom: 8px;
+  background: #F59E0B;
+  color: #000;
+  padding: 6px 8px;
+  border: 2px solid #111;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+/* 13) Responsive: en móvil cambiamos el color del header */
+@media screen and (max-width: 700px) {
+  header { background-color: #EF4444; } /* rojo para que se note en móvil */
+  header h1 { font-size: 28px; }
+  header nav a { padding: 12px 12px; }
+  .column { width: 100%; float: none; }
+}
+
+/* 1) Centrar imágenes que son hijas directas del <body> */
+body > img,
+body > a > img {           /* también si la imagen va dentro de un enlace */
+  display: block;
+  max-width: 1000px;
+  margin: 16px auto;
+  padding: 0 16px;
+}
+
+a[target="_blank"] {
+  display: inline-block;   /* o usa block si prefieres toda la línea */
+  padding: 4px 6px;
+  border-radius: 4px;
+}
+
+/* 2b) Si el enlace (con o sin imagen) es hijo directo del body, bloque */
+body > a {
+  display: block;          /* así el fondo amarillo envuelve bien el contenido */
+}
+/* Enlaces con target _blank: caja centrada y de ancho fijo */
+a[target="_blank"] {
+  display: block;       /* bloque (se centra con margin auto) */
+  width: 140px;         /* ancho fijo para que no ocupe toda la fila */
+  margin: 16px auto;    /* centrado horizontal */
+  padding: 8px;
+  border-radius: 8px;
+  text-align: center;   /* por si lleva texto */
+}
