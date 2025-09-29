@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Luna Makeup — Belleza Simple</title>
+  <link rel="icon" type="image/png" href="images/HTML5-icon.png" />
+
+  <!-- Bootstrap (Quick start) -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  />
+
+  <!-- Tema sencillo -->
+  <style>
+    :root{
+      --rosa:#d63384;
+      --rosa-suave:#fff0f6;
+      --gris:#222;
+    }
+    html{scroll-behavior:smooth;}
+    body{background:#fff7fb;color:var(--gris);}
+    .navbar{background:#1b1b1b;}
+    .navbar .navbar-brand{color:#fff;}
+    .navbar .nav-link{color:#e9e9e9;}
+    .navbar .nav-link:hover{color:#fff;}
+    .btn-primary{background:var(--rosa);border-color:var(--rosa);}
+    .btn-outline-primary{color:var(--rosa);border-color:var(--rosa);}
+    .btn-outline-primary:hover{background:var(--rosa);color:#fff;}
+    .hero{
+      background:var(--rosa-suave);
+      border:1px solid #ffcfe7;
+      border-radius:16px;
+      padding:32px;
+    }
+    .card .card-img-top{
+      width:120px;height:auto;display:block;margin:16px auto 0;
+    }
+    section{padding:40px 0;}
+    .galeria img{border-radius:12px;display:block;width:100%;height:auto;}
+    footer{background:#111;color:#fff;text-align:center;padding:20px 0;margin-top:20px;}
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-semibold" href="#">Luna Makeup</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topnav" aria-controls="topnav" aria-expanded="false" aria-label="Menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="topnav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#looks">Looks</a></li>
+          <li class="nav-item"><a class="nav-link" href="#consejos">Consejos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header id="inicio" class="container mt-4">
+    <div class="hero">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-8">
+          <h1 class="display-6 fw-bold mb-2">Belleza simple, resultados bonitos</h1>
+          <p class="lead mb-3">Descubre básicos fáciles de usar y combínalos para un look diario.</p>
+          <a class="btn btn-primary" href="#productos">Ver productos</a>
+          <a class="btn btn-outline-primary ms-2" href="#consejos">Leer consejos</a>
+        </div>
+        <div class="col-lg-4">
+          <img class="img-fluid rounded"
+               src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=900&auto=format&fit=crop"
+               alt="Kit de maquillaje" />
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Productos -->
+  <section id="productos" class="container">
+    <h2 class="h3 mb-3">Productos básicos</h2>
+    <div class="row g-4">
+      <!-- Base ligera -->
+      <div class="col-sm-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <img class="card-img-top"
+               src="https://media.sephora.eu/content/dam/digital/pim/published/M/MAKE_UP_FOR_EVER/713417/342359-media_swatch.jpg?scaleHeight=400&scaleMode=fit&scaleWidth=400"
+               alt="MAKE UP FOR EVER HD Skin Hydra Glow" />
+          <div class="card-body text-center">
+            <h3 class="h5">Base ligera</h3>
+            <p class="card-text">Cobertura natural con acabado luminoso.</p>
+            <a class="btn btn-outline-primary btn-sm" target="_blank"
+               href="https://www.sephora.es/p/hd-skin-hydra-glow-%E2%80%93-base-de-maquillaje-imperceptible-luminosidad-e-hidratacion-P10056331.html">Ver en Sephora</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Colorete en crema -->
+      <div class="col-sm-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <img class="card-img-top"
+               src="https://www.sephora.com/productimages/sku/s2842870-main-zoom.jpg?imwidth=400"
+               alt="Fenty Beauty Cheeks Out Freestyle Cream Blush" />
+          <div class="card-body text-center">
+            <h3 class="h5">Colorete en crema</h3>
+            <p class="card-text">Toque de color fresco y difuminado.</p>
+            <a class="btn btn-outline-primary btn-sm" target="_blank"
+               href="https://www.sephora.es/p/cheeks-out-freestyle---colorete-en-crema-P4063110.html">Ver en Sephora</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Máscara de pestañas -->
+      <div class="col-sm-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <img class="card-img-top"
+               src="https://www.sephora.com/productimages/sku/s2656130-main-zoom.jpg?imwidth=400"
+               alt="Fenty Beauty Hella Thicc Volumizing Mascara" />
+          <div class="card-body text-center">
+            <h3 class="h5">Máscara de pestañas</h3>
+            <p class="card-text">Volumen y definición duraderos.</p>
+            <a class="btn btn-outline-primary btn-sm" target="_blank"
+               href="https://www.sephora.es/p/hella-thicc-volumizing-mascara---m%C3%A1scara-de-pestanas-para-aportar-volumen-P10049348.html">Ver en Sephora</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Paleta neutra -->
+      <div class="col-sm-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <img class="card-img-top"
+               src="https://www.sephora.com/productimages/sku/s2835361-main-zoom.jpg?imwidth=400"
+               alt="MAKEUP BY MARIO Master Mattes Eyeshadow Palette: The Neutrals" />
+          <div class="card-body text-center">
+            <h3 class="h5">Paleta neutra</h3>
+            <p class="card-text">Tonos mate versátiles para diario.</p>
+            <a class="btn btn-outline-primary btn-sm" target="_blank"
+               href="https://www.sephora.es/p/master-mattes-eyeshadow-palette-the-neutrals---paleta-de-sombras-de-ojos-P1000203003.html">Ver en Sephora</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Iluminador -->
+      <div class="col-sm-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <img class="card-img-top"
+               src="https://www.sephora.com/productimages/sku/s2629483-main-zoom.jpg?imwidth=400"
+               alt="Rare Beauty Positive Light Silky Touch Highlighter" />
+          <div class="card-body text-center">
+            <h3 class="h5">Iluminador</h3>
+            <p class="card-text">Brillo sutil en puntos de luz.</p>
+            <a class="btn btn-outline-primary btn-sm" target="_blank"
+               href="https://www.sephora.es/p/positive-light-silky-touch-highlighter---iluminador-P10045917.html">Ver en Sephora</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bálsamo labial -->
+      <div class="col-sm-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <img class="card-img-top"
+               src="https://www.sephora.com/productimages/sku/s2707875-main-zoom.jpg?imwidth=400"
+               alt="SEPHORA COLLECTION Moisturizing Lip Balm" />
+          <div class="card-body text-center">
+            <h3 class="h5">Bálsamo labial</h3>
+            <p class="card-text">Hidratación diaria con brillo suave.</p>
+            <a class="btn btn-outline-primary btn-sm" target="_blank"
+               href="https://www.sephora.es/p/b%C3%A1lsamo-labial---hidratante-labial-P10021822.html">Ver en Sephora</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Looks -->
+  <section id="looks" class="container">
+    <h2 class="h3 mb-3">Looks rápidos</h2>
+    <div class="row g-4 galeria">
+      <div class="col-md-4">
+        <img src="https://images.unsplash.com/photo-1512203492609-8f0d0a09cee0?q=80&w=800&auto=format&fit=crop" alt="Look natural" />
+      </div>
+      <div class="col-md-4">
+        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=800&auto=format&fit=crop" alt="Labios rosas" />
+      </div>
+      <div class="col-md-4">
+        <img src="https://images.unsplash.com/photo-1526045478516-99145907023c?q=80&w=800&auto=format&fit=crop" alt="Ojos suaves" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Consejos -->
+  <section id="consejos" class="container">
+    <h2 class="h3 mb-3">Consejos básicos</h2>
+    <div class="row g-4">
+      <div class="col-lg-6">
+        <div class="p-3 bg-white border rounded h-100">
+          <h3 class="h5">Rutina rápida (5 minutos)</h3>
+          <ol class="mb-0">
+            <li>Hidratante con SPF.</li>
+            <li>Base donde lo necesites.</li>
+            <li>Colorete en crema y cejas.</li>
+            <li>Máscara de pestañas.</li>
+            <li>Bálsamo o labial hidratante.</li>
+          </ol>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="p-3 bg-white border rounded h-100">
+          <h3 class="h5">Trucos</h3>
+          <ul class="mb-0">
+            <li>Mezcla la base con hidratante para un acabado natural.</li>
+            <li>Iluminador en pómulo alto y lagrimal.</li>
+            <li>La barra de labios puede servir como rubor de emergencia.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="container">
+    <h2 class="h3 mb-3">Contacto</h2>
+    <form class="row g-3">
+      <div class="col-md-6">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input id="nombre" type="text" class="form-control" required />
+      </div>
+      <div class="col-md-6">
+        <label for="correo" class="form-label">Correo</label>
+        <input id="correo" type="email" class="form-control" placeholder="nombre@ejemplo.com" required />
+      </div>
+      <div class="col-12">
+        <label for="mensaje" class="form-label">Mensaje</label>
+        <textarea id="mensaje" class="form-control" rows="4" required></textarea>
+      </div>
+      <div class="col-12">
+        <button class="btn btn-primary" type="submit">Enviar</button>
+        <button class="btn btn-outline-primary" type="reset">Limpiar</button>
+      </div>
+    </form>
+  </section>
+
+  <footer>
+    <div class="container small">
+      © 2025 Luna Makeup — Maquillaje simple para el día a día
+    </div>
+  </footer>
+
+  <!-- JS bundle para navbar colapsable -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
+</body>
+</html>
