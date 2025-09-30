@@ -1,0 +1,140 @@
+//Ejercicio JavaScript 1: Generador de contraseñas
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Generador de contraseñas (Ejercicio JS)</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 700px; margin: 30px auto; color: #333; }
+    fieldset { border: 2px solid #7fd1b9; padding: 15px; margin-bottom: 20px; }
+    label { display: block; margin-bottom: 8px; }
+    input[type="number"] { width: 60px; }
+    .result { background: #f6f6f6; padding: 12px; border: 1px solid #ddd; }
+    button { margin-top: 8px; }
+    small { color: #666; display:block; margin-top:6px; }
+  </style>
+</head>
+<body>
+  <h1>Generador de contraseñas (Ejercicio 1)</h1>
+
+  <fieldset>
+    <legend>Configuración</legend>
+    <label>
+      Número de palabras (1-10):
+      <input id="numWords" type="number" min="1" max="10" value="4">
+    </label>
+
+    <label>
+      <input id="capitalize" type="checkbox"> Comenzar cada palabra en mayúscula
+    </label>
+
+    <label>
+      <input id="noRepeat" type="checkbox" checked> No repetir palabras
+    </label>
+
+    <label>
+      Separador entre palabras:
+      <input id="separator" type="text" value="" placeholder="(déjalo vacío para concatenar)" maxlength="3">
+      <small>Ej.: '-' o '_' — deja vacío para obtener una sola palabra larga tipo 'CorrectHorseBatteryStaple'</small>
+    </label>
+
+    <button id="genBtn">Generar Contraseña</button>
+  </fieldset>
+
+  <div class="result" id="output">
+    Pulsa "Generar Contraseña" para ver el resultado.
+  </div>
+
+  <script>
+    'use strict';
+
+    // Diccionario: lista de palabras.  
+    const DICTIONARY = [
+      "correct", "horse", "battery", "staple", "apple", "orange", "river", "mountain",
+      "cloud", "stone", "paper", "window", "keyboard", "socket", "lamp", "table",
+      "chair", "book", "garden", "street", "light", "shadow", "ocean", "breeze",
+      "sun", "moon", "star", "tree", "flower", "bridge", "train", "plane"
+    ];
+
+    // Util: devuelve un entero aleatorio entre 0 y max-1
+    function randInt(max) {
+      return Math.floor(Math.random() * max);
+    }
+
+    // Capitaliza la primera letra
+    function capitalizeWord(w) {
+      if (!w) return w;
+      return w.charAt(0).toUpperCase() + w.slice(1);
+    }
+
+    // Genera la contraseña con las opciones dadas
+    function generarContrasena(options) {
+      const dict = DICTIONARY.slice(); // copia para poder eliminar si no se repiten
+      const total = dict.length;
+      const num = Math.max(1, Math.min(10, Number(options.numWords) || 4));
+      const parts = [];
+
+      // Si piden no repetir y piden más palabras de las que hay en el diccionario, ajustamos para evitar bucles infinitos.
+      const permitirNoRepetir = !!options.noRepeat;
+      const maxUnique = dict.length;
+      if (permitirNoRepetir && num > maxUnique) {
+        // si el usuario insiste en más, permitimos repetición en exceso, pero lo advertimos
+        console.warn("Se solicitaron más palabras únicas de las disponibles en el diccionario.");
+      }
+
+      let attempts = 0;
+      while (parts.length < num) {
+        attempts++;
+        if (attempts > 1000) break; // seguridad por si algo falla
+        const idx = randInt(dict.length);
+        const word = dict[idx];
+
+        if (permitirNoRepetir) {
+          // si ya usamos todas las únicas posibles y seguimos necesitando, permitir repeticiones
+          if (parts.indexOf(word) !== -1) {
+            // palabra ya usada
+            // si quedan palabras no usadas, seguimos buscando
+            const unusedExist = dict.some(w => parts.indexOf(w) === -1);
+            if (unusedExist) continue;
+            // si no quedan sin usar, aceptamos la repetida
+          }
+        }
+
+        parts.push(word);
+      }
+
+      // formateo: capitalizar si se pidió y unir por separador
+      const finalParts = parts.map(w => options.capitalize ? capitalizeWord(w) : w);
+      const sep = (typeof options.separator === 'string') ? options.separator : '';
+      return finalParts.join(sep);
+    }
+
+    // Interacción con la página
+    window.addEventListener('load', function() {
+      const btn = document.getElementById('genBtn');
+      const out = document.getElementById('output');
+
+      btn.addEventListener('click', function() {
+        const numWords = document.getElementById('numWords').value;
+        const capitalize = document.getElementById('capitalize').checked;
+        const noRepeat = document.getElementById('noRepeat').checked;
+        const separator = document.getElementById('separator').value;
+
+        const opts = {
+          numWords: numWords,
+          capitalize: capitalize,
+          noRepeat: noRepeat,
+          separator: separator
+        };
+
+        const pwd = generarContrasena(opts);
+
+        out.innerHTML = '<strong>La contraseña generada es:</strong> ' + pwd;
+        // Para pruebas se puede registrar en consola
+        console.log('Opciones usadas:', opts);
+        console.log('Diccionario usado (longitud):', DICTIONARY.length);
+      });
+    });
+  </script>
+</body>
+</html>
